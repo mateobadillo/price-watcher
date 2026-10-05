@@ -1,1 +1,4 @@
-[]
+[
+    { "symbol": "CLAUS", "chain": "ethereum", "address": "0x1b54e762aa34cf6e28e9c082f2848e28e45da6b8", "buyPrice": 0.00932 },
+    { "symbol": "STOCKER", "chain": "ethereum", "address": "0x75e2fc69ff2ac12af65ba7d321bbf4f878c535d2", "buyPrice": 0.00713 }
+]
