@@ -1,6 +1,6 @@
 # price-watcher
 
-Every 30 minutes from 06:00 to 22:00 (Bogotá), sends a phone notification with each watched coin's price
+Every 30 minutes (at :07 and :37) from 06:07 to 22:07 (Bogotá), sends a phone notification with each watched coin's price
 and how it compares with your buy price. Silent at night. Free: GitHub Actions + DexScreener + ntfy.
 
 ## Get the notifications

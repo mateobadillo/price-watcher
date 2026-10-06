@@ -2,11 +2,12 @@ name: price-watch
 
 on:
   # every 30 min from 06:00 to 22:00 Bogotá (UTC-5, no DST) = 11:00–03:00 UTC.
-  # GitHub may start scheduled runs a few minutes late. watch.mjs also checks the hours itself.
+  # At :07 and :37, not :00/:30: GitHub delays and can drop scheduled runs at the top of the hour
+  # (the first version at :00/:30 fired zero scheduled runs in its first 1.5 h). watch.mjs also checks the hours.
   schedule:
-    - cron: "0,30 11-23 * * *"
-    - cron: "0,30 0-2 * * *"
-    - cron: "0 3 * * *"
+    - cron: "7,37 11-23 * * *"
+    - cron: "7,37 0-2 * * *"
+    - cron: "7 3 * * *"
   workflow_dispatch:
     inputs:
       force:
