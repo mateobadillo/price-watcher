@@ -1,15 +1,9 @@
 name: price-watch
 
 on:
-  # every 30 min from 06:00 to 22:00 Bogotá (UTC-5, no DST) = 11:00–03:00 UTC.
-  # At :07 and :37, not :00/:30: GitHub delays and can drop scheduled runs at the top of the hour
-  # (the first version at :00/:30 fired zero scheduled runs in its first 1.5 h). watch.mjs also checks the hours.
-  schedule:
-    - cron: "7,37 11-23 * * *"
-    - cron: "7,37 0-2 * * *"
-    - cron: "7 3 * * *"
-  # a push event wakes up the schedule on new private repos (GitHub community #202602), and editing the
-  # watchlist then sends an update right away
+  # The 30-min trigger comes from cron-job.org calling workflow_dispatch (see README). GitHub's own
+  # schedule was dropped: on this repo it skipped most slots and ran the rest 4-7 h late.
+  # editing the watchlist sends an update right away
   push:
     branches: [main]
     paths: ["watchlist.json", ".github/workflows/watch.yml"]
