@@ -8,6 +8,11 @@ on:
     - cron: "7,37 11-23 * * *"
     - cron: "7,37 0-2 * * *"
     - cron: "7 3 * * *"
+  # a push event wakes up the schedule on new private repos (GitHub community #202602), and editing the
+  # watchlist then sends an update right away
+  push:
+    branches: [main]
+    paths: ["watchlist.json", ".github/workflows/watch.yml"]
   workflow_dispatch:
     inputs:
       force:

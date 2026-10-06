@@ -24,7 +24,7 @@ Edit `watchlist.json` (on GitHub: open the file → pencil icon → Commit chang
 - `buyPrice`: what you paid per coin, in USD; `investedUsd` (optional) adds the current value
 - `"active": false` pauses one coin without deleting it
 
-A coin at +100% or −50% vs your buy price sends a louder notification.
+A coin at +100% or −50% vs your buy price sends a louder notification. Saving the watchlist also sends an update right away (during the hours).
 
 ## Test
 
